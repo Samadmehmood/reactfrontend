@@ -33,12 +33,20 @@
 
     <!-- Materialize Icons -->
     <link href="content/site.css" rel="stylesheet">
+   <!--  
+     <link href="content/dtpcss.css" rel="stylesheet">
+<script src="content/datetimpicker.js"></script>
+  
     <script>
-     $(document).ready(function(){
-    $('.datepicker').datepicker();
+    jQuery(document).ready(function () {
+                'use strict';
+                $('#scheduled').datetimepicker({
+                  format:'m-d-y H:i'
+
+      });
+ });
+    </script> -->
     
-  });
-    </script>
     <title>Productivity Content Planner</title>
   </head>
   <body>
@@ -54,5 +62,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
   </body>
+
 </html>

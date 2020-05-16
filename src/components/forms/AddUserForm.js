@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import moment from 'moment';
-
 const AddUserForm = props => {
 
     const initialFormState = {  
@@ -8,6 +6,7 @@ const AddUserForm = props => {
     contentType:'',
     headlines:'',
     scheduled:'',
+    publishedAt:'',
     channels:'',
     producers:'',
     sourceOfProducers:'',
@@ -15,7 +14,7 @@ const AddUserForm = props => {
     likes:'',
     shares:'',
     createdAt:'',
-    publishedAt:''};
+   };
     const [user, setUser] = useState(initialFormState);
 
     const handleInputChange = event => {
@@ -74,10 +73,8 @@ const AddUserForm = props => {
                 <div className="row">
                     <div className="input-field col s4">
                    
-                    <input type="text"  
-                            name="scheduled"  
-                            value={user.scheduled} className="datepicker"
-                            onChange={handleInputChange} dateFormat='YYYY-MM-DD'
+                    <input type="date" name="scheduled"  id="scheduled" value={user.scheduled}
+                          onChange={handleInputChange} 
                             required />
                         <label htmlFor="scheduled" className="active">Scheduled</label>
                     </div>
@@ -163,12 +160,12 @@ const AddUserForm = props => {
                
                     <div className="input-field col s4">
 
-                        <input 
-                            type="text" 
+                    <input 
+                            type="date" 
                             name="publishedAt" 
                             value={user.publishedAt}
                             onChange={handleInputChange} 
-                            required className="datepicker" />
+                            required />
                         <label htmlFor="publishedAt">Published At</label>
                     </div>
                 </div>

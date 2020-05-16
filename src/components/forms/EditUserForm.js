@@ -62,12 +62,7 @@ const EditUserForm = props => {
                 <div className="row">
                     <div className="input-field col s4">
 
-                        <input 
-                           input type="text"  
-                           name="scheduled"  
-                           value={moment(user.scheduled).format('YYYY-MM-DD')} className="datepicker"
-                           onChange={handleInputChange} dateFormat='YYYY-MM-DD'
-                            required />
+                    <input type="date" name="scheduled"  id="scheduled" value={moment(user.scheduled).format('YYYY-MM-DD')} onChange={handleInputChange}  />
                         <label className="active" htmlFor="scheduled">Scheduled</label>
                     </div>
                
@@ -153,9 +148,9 @@ const EditUserForm = props => {
                     <div className="input-field col s4">
 
                         <input 
-                            type="text" 
-                            name="publishedAt" className="datepicker" 
-                            value={moment(user.publishedAt).format('L')}
+                            type="date" 
+                            name="publishedAt"
+                            value={moment(user.publishedAt).format('YYYY-MM-DD')}
                             onChange={handleInputChange} 
                             required />
                         <label className="active" htmlFor="publishedAt">Published At</label>

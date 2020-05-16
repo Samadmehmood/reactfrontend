@@ -9,10 +9,10 @@ import EditUserForm from '../components/forms/EditUserForm';
 
 
 class Home extends Component {
-
+ 
     constructor(props) {
         super(props);
-
+        this.myRef = React.createRef();
         this.state = {
             users: [],
             search:"",
@@ -35,11 +35,13 @@ class Home extends Component {
             editing: false
         }
     }
-   
+    scrollToBottom = () => {
+      this.myRef.current.scrollIntoView({ behavior: "smooth" });
+    }
     componentDidMount() {
         this.refreshUserTable();
     }
-
+    
     refreshUserTable() {
         this.usersData = api.get(`api`)
             .then(response => response.data)
@@ -69,7 +71,6 @@ class Home extends Component {
     };
 
     updateUser = (id, user) => {
-        
         api.put(`api/${id}`, qs.stringify(user))
             .then(res => {
 
@@ -99,7 +100,7 @@ class Home extends Component {
     };
 
     editRow = user => {
-
+this.scrollToBottom();
         this.setState({ 
             currentUser: { 
                 id: user.id,
@@ -132,7 +133,9 @@ class Home extends Component {
         const { users } = this.state;
         const { search } = this.state;
         const filteredUsers = users.filter(user => {
-          return user.todo.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          const u1= user.todo.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          const u2=user.contentType.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          return u1+u2;
         });
         return (
           <div className="container">
@@ -148,6 +151,10 @@ class Home extends Component {
                     required
                   />
                   <label htmlFor="search">Search</label>
+                </div>
+               
+                <div className="input-field col s4">
+                <button onClick={() =>this.scrollToBottom()} className="waves-effect waves-light btn"><i className="material-icons right">add</i> Add New</button>
                 </div>
               </div>
               <div className="col s12 l12">
@@ -167,14 +174,19 @@ class Home extends Component {
                     currentUser={this.state.currentUser}
                     updateUser={this.updateUser}
                   />
+                 
+                  
                 </div>
               ) : (
                 <div className="col s12 l12">
                   <h4>Add Content</h4>
                   <AddUserForm addUser={this.addUser} />
+                  
                 </div>
               )}
+              
             </div>
+            <div ref={this.myRef}></div>
           </div>
         );
     };
