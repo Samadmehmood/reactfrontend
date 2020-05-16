@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run it as windows service
+- Install pm2(npm install pm2 -g -s)
+- Start a service
+    -for frontend open cmd/powershell in root of frontend and paste the following command 'pm2 start node_modules/react-scripts/scripts/start.js --name "ServiceName" '
+    -for backend open cmd/powershell in root of backend and paste the following command " pm2 start node_modules/react-scripts/scripts/start.js --name "ServiceNameCouldBeAnyWord" "
+    -you can check status of services using pm2 status command or pm2 =-help for more details in pm2
+- When it runs you can use [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 ## Available Scripts
 
 In the project directory, you can run:
