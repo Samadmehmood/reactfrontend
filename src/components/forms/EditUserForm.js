@@ -33,7 +33,7 @@ const EditUserForm = props => {
                             name="todo" 
                             value={user.todo}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="todo">Todos</label>
                     </div>
               
@@ -43,7 +43,7 @@ const EditUserForm = props => {
                             name="contentType" 
                             value={user.contentType}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         
                         <label htmlFor="contentType" className="active">Content Type</label>
                     </div>
@@ -55,7 +55,7 @@ const EditUserForm = props => {
                             name="headlines" 
                             value={user.headlines}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="headlines">Headlines</label>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ const EditUserForm = props => {
                             name="channels" 
                             value={user.channels}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="channels">Channels</label>
                     </div>
                
@@ -85,7 +85,7 @@ const EditUserForm = props => {
                             name="producers" 
                             value={user.producers}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="producers">Producers</label>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ const EditUserForm = props => {
                             name="sourceOfProducers" 
                             value={user.sourceOfProducers}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="sourceOfProducers">Source of Producers</label>
                     </div>
                
@@ -108,7 +108,7 @@ const EditUserForm = props => {
                             name="desiredActions" 
                             value={user.desiredActions}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="desiredActions">Desired Actions</label>
                     </div>
                 
@@ -119,7 +119,7 @@ const EditUserForm = props => {
                             name="likes" 
                             value={user.likes}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="likes">Likes</label>
                     </div>
                
@@ -130,7 +130,7 @@ const EditUserForm = props => {
                             name="shares" 
                             value={user.shares}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="shares">Shares</label>
                     </div>
                
@@ -141,7 +141,7 @@ const EditUserForm = props => {
                             name="createdAt" className="datepicker" 
                             value={moment(user.createdAt).format('L')}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="createdAt">Created At</label>
                     </div> */}
                
@@ -152,7 +152,7 @@ const EditUserForm = props => {
                             name="publishedAt"
                             value={moment(user.publishedAt).format('YYYY-MM-DD')}
                             onChange={handleInputChange} 
-                            required />
+                             />
                         <label className="active" htmlFor="publishedAt">Published At</label>
                     </div>
                 </div>
